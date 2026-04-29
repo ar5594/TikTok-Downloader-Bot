@@ -144,9 +144,3 @@ If you encounter bugs or need help:
 **Engine Architect:** k9k (r.vu)
 
 ---
-
-## 📜 License
-
-MIT License
-
----
