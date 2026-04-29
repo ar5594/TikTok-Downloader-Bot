@@ -15,7 +15,7 @@ const formatCount = (num) => {
 module.exports = {
     async handleInteraction(interaction, config, client) {
         
-        // 1. نظام إدخال الرابط (Modal)
+        // 1. URL Input System (Modal)
         if (interaction.isButton() && interaction.customId === 'open_tiktok_modal') {
             const modal = new ModalBuilder()
                 .setCustomId('tiktok_modal')
@@ -32,7 +32,7 @@ module.exports = {
             return await interaction.showModal(modal);
         }
 
-        // 2. عرض نتائج البحث (Ephemeral)
+        // 2. Search Results Display (Ephemeral)
         if (interaction.type === InteractionType.ModalSubmit && interaction.customId === 'tiktok_modal') {
             const url = interaction.fields.getTextInputValue('tiktok_url');
             await interaction.deferReply({ flags: [MessageFlags.Ephemeral] });
@@ -70,7 +70,7 @@ module.exports = {
             }
         }
 
-        // 3. معالجة الإرسال النهائي
+        // 3. Final Execution and Delivery
         if (interaction.isButton() && interaction.customId.startsWith('dl_')) {
             const [action, videoId] = interaction.customId.split('|');
             const originalUrl = urlDatabase.get(videoId);
@@ -107,7 +107,6 @@ module.exports = {
 
                 const target = config.sendToDM ? interaction.user : await client.channels.fetch(config.logsChannelId);
 
-                // الإمبيد النهائي المبسط والاحترافي
                 const successEmbed = new EmbedBuilder()
                     .setAuthor({ name: 'Download Ready', iconURL: v.author.avatar })
                     .setColor(BRAND_COLOR)
@@ -117,12 +116,12 @@ module.exports = {
                         { name: '🎬 Creator', value: `[@${v.author.unique_id}](https://tiktok.com/@${v.author.unique_id})`, inline: true },
                         { name: '🔗 Links', value: `[Video Source](${originalUrl}) • [Direct Download](${fileUrl})` }
                     )
-                    .setTimestamp(); // يظهر الوقت فقط تحت الإمبيد
+                    .setTimestamp();
 
                 await target.send({
-                    content: `${interaction.user}`, // المسج الفوق فقط منشن
+                    content: `${interaction.user}`,
                     embeds: [successEmbed],
-                    files: [{ attachment: fileUrl, name: `ktkt_${videoId}.${ext}` }]
+                    files: [{ attachment: fileUrl, name: `vmd_${videoId}.${ext}` }]
                 });
 
                 await interaction.deleteReply().catch(() => {});
