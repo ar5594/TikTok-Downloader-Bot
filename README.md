@@ -89,8 +89,6 @@ Deploys the main interface:
 
 After clicking the button, paste your link:
 
-[![image.png](https://i.postimg.cc/HsqwPJ2n/image.png)](https://postimg.cc/crctvLPG)
-
 ---
 
 ### 3. Choose Format
@@ -99,6 +97,8 @@ After clicking the button, paste your link:
 * 💎 HD
 * 🏷️ Watermark
 * 🎵 MP3
+
+[![image.png](https://i.postimg.cc/HsqwPJ2n/image.png)](https://postimg.cc/crctvLPG)
 
 ---
 
