@@ -137,13 +137,12 @@ If you like this project:
 
 ---
 
-## 📞 Support & Community
+## 📞 Support
 
-* Discord: https://discord.gg/wxkxHmR9GT
-* Operator: `r.vu`
-* Version: **Forensic Engine 2.0.26 (Secured Build)**
+- 💬 Discord Server (Support): https://discord.gg/wxkxHmR9GT  
+- 👤 My Discord: r.vu  
 
-**Engine Architect:** k9k (r.vu)
+> ⚡ If you find any issue in the code or have any questions, feel free to contact me for support or inquiries.
 
 ---
 
